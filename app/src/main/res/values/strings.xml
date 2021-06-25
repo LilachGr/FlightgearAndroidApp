@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">FlightgearAndroidApp</string>
     <string name="connect_button_text">connect</string>
+    <string name="port_string">enter port</string>
+    <string name="ip_string">enter ip</string>
+    <string name="welcome">Welcome!!</string>
 </resources>
