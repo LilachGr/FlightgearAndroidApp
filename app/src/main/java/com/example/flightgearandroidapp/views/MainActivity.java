@@ -8,11 +8,11 @@ import android.os.Bundle;
 import com.example.flightgearandroidapp.R;
 import com.example.flightgearandroidapp.viewModel.MyViewModel;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Joystick.JoystickListener{
     private MyViewModel myViewModel;
     private EditText ip;
     private EditText port;
-    private boolean isConnect = false;
+    private Joystick joystick;
 
     public MainActivity(){
         this.myViewModel = new MyViewModel();
@@ -21,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        joystick = new Joystick(this);
+        joystick.surfaceCreated(joystick.getHolder());
         setContentView(R.layout.activity_main);
 
         this.ip = findViewById(R.id.ipText);
@@ -65,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         String ipStr = String.valueOf(ip.getText());
         String portStr = String.valueOf(port.getText());
         Context context = getApplicationContext();
-        CharSequence textFail = "Enter correct ip and port! Try again!";
+        CharSequence textFail = "Wrong ip or port! Try again!";
         CharSequence textSuccess = "The connection succeeded";
 
         int duration = Toast.LENGTH_SHORT;
@@ -110,5 +113,9 @@ public class MainActivity extends AppCompatActivity {
         } catch (NumberFormatException nfe) {
             return false;
         }
+    }
+    @Override
+    public void onJoystickMoved(float xPercent, float yPercent) {
+        myViewModel.VNChangeJoystick(xPercent, yPercent);
     }
 }
