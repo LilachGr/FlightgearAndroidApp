@@ -5,6 +5,8 @@ import com.example.flightgearandroidapp.model.IFGPlayer;
 import com.example.flightgearandroidapp.views.Joystick;
 import com.example.flightgearandroidapp.views.JoystickListener;
 
+import java.io.IOException;
+
 public class MyViewModel {
     private IFGPlayer modelFG;
     public MyViewModel(){
@@ -15,7 +17,7 @@ public class MyViewModel {
         modelFG.setPort(port);
         modelFG.connect();
     }
-    public void VMDisconnect(){
+    public void VMDisconnect() throws IOException {
         modelFG.disconnect();
     }
     public void VNChangeThrottle(double throttle){
@@ -26,5 +28,9 @@ public class MyViewModel {
     }
     public void VNChangeRudder(double rudder){
         modelFG.changeRudder(rudder);
+    }
+
+    public boolean VMIsConnected(){
+        return modelFG.isConnected();
     }
 }

@@ -79,7 +79,11 @@ public class MainActivity extends AppCompatActivity implements Joystick.Joystick
         }
         int port1 = Integer.parseInt(portStr);
         myViewModel.VMConnect(port1, ipStr);
-        Toast.makeText(context, textSuccess, duration).show();
+        if (myViewModel.VMIsConnected()) {
+            Toast.makeText(context, textSuccess, duration).show();
+        } else {
+            Toast.makeText(context, textFail, duration).show();
+        }
     }
 
     private boolean isNumeric(String string) {
