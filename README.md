@@ -8,7 +8,7 @@
 + You need to make sure that the system uses JDK8.
 
 ## Uml file
-The Uml is in the below jpeg:     ---
+The Uml is in the below jpeg:     https://github.com/LilachGr/FlightgearAndroidApp/blob/main/UML.pdf
 
 ## Video of the WebApp
-The link to the video:     ---
+The link to the video:     https://github.com/LilachGr/FlightgearAndroidApp/blob/main/video.mp4
