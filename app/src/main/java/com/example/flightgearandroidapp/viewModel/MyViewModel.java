@@ -2,8 +2,6 @@ package com.example.flightgearandroidapp.viewModel;
 
 import com.example.flightgearandroidapp.model.FGPlayer;
 import com.example.flightgearandroidapp.model.IFGPlayer;
-import com.example.flightgearandroidapp.views.Joystick;
-import com.example.flightgearandroidapp.views.JoystickListener;
 
 import java.io.IOException;
 

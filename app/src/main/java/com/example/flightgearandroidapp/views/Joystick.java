@@ -54,7 +54,7 @@ public class Joystick extends SurfaceView implements SurfaceHolder.Callback, Vie
 
     @Override
     public void surfaceChanged(@NonNull SurfaceHolder surfaceHolder, int i, int i1, int i2) {
-        //getHolder().addCallback(this);
+        getHolder().addCallback(this);
     }
 
     @Override
